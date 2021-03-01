@@ -1,0 +1,33 @@
+
+.wrapper {
+  padding: 0.1vh;
+  width: 50vw;
+  height: 50vh;
+  border: 2px solid gainsboro;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .goods {
+    width: 12vw;
+    display: flex;
+    flex-direction: column;
+    .coke {
+      width: 8vw;
+    }
+  }
+  .operations {
+    margin-top: 5vh;
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+    .operation {
+      margin-right: 0.5vw;
+      button {
+        margin-left: 0.2vw;
+      }
+      .number-input {
+        width: 6vw;
+      }
+    }
+  }
+}

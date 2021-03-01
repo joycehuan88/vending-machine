@@ -1,0 +1,29 @@
+<div class="wrapper">
+  <h3>vending machine</h3>
+  <div class="goods">
+    <img src="../assets/Coke.png" class="coke" alt="">
+    <span>Price: {{ goods.price }}</span>
+    <span>Stock Number: {{ goods.stock }}</span>
+    <span>Your Change: {{ goods.change }}</span>
+  </div>
+  <div class="operations">
+    <div class="operation" *ngIf="status === 'ready'">
+      <button (click)="handleAct('buy')">Buy Products</button>
+      <button (click)="handleAct('supply')">Supply Products</button>
+    </div>
+    <div class="operation" *ngIf="status === 'purchase'">
+      Number: <input type="text" [(ngModel)]="input.buyNum" (input)="handleInputBuyNum()" placeholder="buy quantity" type="number" class="number-input" min="0">
+      <br>
+      Money: <input type="text" [(ngModel)]="input.money" (input)="handleInputMoney()" placeholder="money" type="number" class="number-input" min="0">
+      <br>
+      <button (click)="handleAct('confirm')">Confirm</button>
+      <button (click)="handleAct('cancel')">Cancel</button>
+    </div>
+    <div class="operation" *ngIf="status === 'supply'">
+      <input type="text" [(ngModel)]="input.supplyNum"  (input)="handleInputSupplyNum()" placeholder="supply quantity" type="number" class="number-input" min="0">
+      <button (click)="handleAct('confirm')">Confirm</button>
+      <button (click)="handleAct('cancel')">Cancel</button>
+    </div>
+  </div>
+  <p>{{ getMessage()  }}</p>
+</div>
